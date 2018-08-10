@@ -1,0 +1,145 @@
+\documentclass[tcc,capa,table]{textsi}
+
+\usepackage[utf8]{inputenc} % acentuacao
+\usepackage[T1]{fontenc}
+
+\usepackage{array,booktabs}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{graphicx,subfigure} % para inserir figuras
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{lipsum}
+
+\title{Meu Trabalho}
+
+\author{Torres}{Giovane de Oliveira}
+
+\advisor[Prof.~Me.]{Torres}{Giovane de Oliveira}
+\instituicaoadvisor{IFSul}
+
+%\coadvisor[Prof.~Dr.]{Aguiar}{Marilton Sanchotene de}
+%\collaborator[Prof.~Dr.]{Aguiar}{Marilton Sanchotene de}
+
+\membroi{Prof.~Dr. Fulano de Souza e Silva}
+\instituicaomembroi{UFI}
+\membroii{Prof. Dr. Sicrano Silveira Rosa}
+\instituicaomembroii{UFPG}
+%\membroiii{Prof. Dr. Beltrano Pereira Tavares}
+%\instituicaomembroiii{UFCR}
+
+\keyword{Reuso de traços}
+\keyword{Arquiteturas ARM}
+\keyword{Desempenho}
+
+\begin{document}
+
+%\newcommand{\orientadora}{Orientadora}			%descomente caso tenhas orientadora
+\newcommand{\coorientadora}{Coorientadora}		%descomente caso tenhas coorientadora
+
+%\renewcommand{\advisorname}{\orientadora}       
+%\renewcommand{\coadvisorname}{\coorientadora}	
+
+\maketitle 
+
+\sloppy
+
+\fichacatalografica
+\folhadeaprovacao
+
+%Opcional - dedicatória
+\begin{dedicatoria}
+	Texto da Dedicatória
+\end{dedicatoria}
+
+%Opcional - agradecimentos
+\begin{agradecimentos}
+	Texto dos Agradecimentos
+\end{agradecimentos}
+
+%Opcional - epígrafe
+\begin{epigrafe}
+	"Texto da Epígrafe" \\
+	Autor da Epígrafe
+\end{epigrafe}
+
+% Resumo em língua vernácula (a que você está escrevendo o documento)
+\begin{abstract}
+	Texto do resumo. Deve conter de 150 a 500 palavras.
+\end{abstract}
+
+% Resumo em língua estrangeira
+\begin{englishabstract}%
+ 	{Palavras-chave em inglês}
+ 	Texto do resumo, em inglês.
+\end{englishabstract}
+
+%Lista de Figuras
+\listoffigures
+
+%Lista de Tabelas
+\listoftables
+
+%lista de abreviaturas e siglas
+\begin{listofabbrv}{SN1} % <- Insira aqui a maior sigla da sua lista de siglas.
+	% O conteúdo dentro dos colchetes é a sigla, e o texto ao lado é o seu significado
+	\item[SN1] Sigla Número 1
+\end{listofabbrv}
+
+%Sumario
+\tableofcontents
+
+% Chapter é a seção primária do documento. Toda vez que é chamado este comando, uma quebra de página é adicionada;
+\chapter{Seção Primária (\textit{chapter})}
+
+\lipsum[1]
+
+% Section é a seção secundária do documento. O restante é auto explicativo..
+\section{Seção Secundária (\textit{section})}
+
+\lipsum[1-2]
+
+\subsection{Seção Terciária (\textit{subsection})}
+
+\lipsum[1]
+
+\subsubsection{Seção Quaternária (\textit{subsubsection})}
+
+\lipsum[1]
+
+\paragraph{Seção Quinária (\textit{paragraph})}
+
+Exemplo de citação padrão~\cite{barber:92}. Uma outra citação~\cite{silva:18}. \lipsum[1-3]
+
+Isso pode ser visto na Figura~\ref{fig:xitsu}.
+
+\begin{figure}[!h]
+\centering
+\caption{Xitsu}
+\label{fig:xitsu}
+\includegraphics[scale=2]{xitsu.png} 
+\source{Xitsu}
+\end{figure}
+
+\bibliography{exemplo-tcc}
+\bibliographystyle{abnt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% NÃO MEXER - RELACIONADO À FORMATAÇÃO DE ANEXOS/APÊNDICES
+\makeatletter%
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{0.2cm}}%
+\makeatother%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Adiciona um apêndice
+\append{Inverno}
+
+% Adiciona um anexo
+\annex{Verão}
+
+\end{document}
+
